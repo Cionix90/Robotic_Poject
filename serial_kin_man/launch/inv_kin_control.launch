@@ -1,0 +1,31 @@
+<launch>
+    <param name="robot_description"
+        command="$(find xacro)/xacro --inorder '$(find first_rrr)/urdf/robot_rrr.xacro'" />
+    <param name="sim/robot_des"
+        command="$(find xacro)/xacro --inorder '$(find first_rrr)/urdf/robot_rrr.xacro'" />  
+    <rosparam file="$(find first_rrr_control)/config/test_custom_cntr.yaml" command="load"/>
+    <!-- output thing-->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+        <remap from="/joint_states" to="sim/joint_states"/>
+    </node>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find first_rrr)/urdf/conf.rviz" /> 
+
+    <!--custom packages-->
+    <node name="kinematic_simulator" pkg="kinematic_simulator" type="kin_sim" output="screen" ns="sim"/>
+
+
+  
+       <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find first_rrr)/urdf/conf.rviz"/> -->
+    <node name="serial_interface" pkg="serial_kin_man" type="hw_int_node" output="screen" ns="sim"/>
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" ns="sim"
+        args="
+        joint_state_controller
+        test_controller
+        "/>
+  
+</launch>

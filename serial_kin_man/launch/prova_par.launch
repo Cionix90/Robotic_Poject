@@ -1,0 +1,3 @@
+<launch>
+    <rosparam file="$(find first_rrr_control)/config/inv_kin_controller.yaml" command="load"/>
+</launch>

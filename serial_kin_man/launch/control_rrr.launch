@@ -1,0 +1,30 @@
+<launch>
+    
+    <param name="sim/robot_description"
+        command="$(find xacro)/xacro --inorder '$(find first_rrr)/urdf/robot_rrr.xacro'" />
+   
+      <!-- Load joint controller configurations from YAML file to parameter server -->
+    <rosparam file="$(find first_rrr_control)/config/first_rrr_control.yaml" command="load"/>
+
+    <!-- load the controllers -->
+    
+
+       
+    <node name="kinematic_simulator" pkg="kinematic_simulator" type="kin_sim" output="screen" ns="sim"/>
+
+
+  
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="sim"/>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find first_rrr)/urdf/conf.rviz" ns="sim" /> 
+    <node name="serial_interface" pkg="serial_kin_man" type="hw_int_node" output="screen" ns="sim"/>
+
+   <!-- <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen"
+        args="
+        rrr_robot/pos_cont_jnt_1 
+        "/>
+    -->
+    
+
+</launch>

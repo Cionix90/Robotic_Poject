@@ -1,0 +1,14 @@
+<robot  xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:property name="b_l"  value="base_link"/>                                     
+    <xacro:property name="l1"   value="first_link"/>
+    <xacro:property name="l2"   value="second_link"/>
+    <xacro:property name="l3"   value="third_link"/>
+    <xacro:property name="l4"   value="end_effector_link"/>
+    <xacro:property name="j1"   value="jnt_1"/>
+    <xacro:property name="j2"   value="jnt_2"/>
+    <xacro:property name="j3"   value="jnt_3"/>
+    <xacro:property name="mass_l1" value="1"/>
+    <xacro:property name="mass_l"  value="0.5"/>
+    <xacro:property name="inertial" value="0.7"/>
+    <xacro:property name="PI"  value="3.1415"/>
+</robot>

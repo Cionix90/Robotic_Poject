@@ -1,0 +1,22 @@
+sim:
+  hardware_interface:
+     joints:
+        - jnt_1
+        - jnt_2
+        - jnt_3
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+  # Position Controllers ---------------------------------------
+  pos_cont_jnt_1:
+    type: velocity_controllers/JointPositionController
+    joint: jnt_1
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+  pos_cont_jnt_2:
+    type: velocity_controllers/JointPositionController
+    joint: jnt_2
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+  pos_cont_jnt_3:
+    type: velocity_controllers/JointPositionController
+    joint: jnt_3
+    pid: {p: 1.0, i: 0.0, d: 0.0}    

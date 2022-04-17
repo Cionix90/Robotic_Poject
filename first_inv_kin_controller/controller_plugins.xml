@@ -1,0 +1,6 @@
+<library path="lib/libinv_kin_controller">
+    <class name="inv_kin_controller/InvKinController"
+    type="inv_kin_controller::InvKinController"
+    base_class_type="controller_interface::ControllerBase"/>
+
+</library>

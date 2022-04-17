@@ -1,0 +1,8 @@
+<library path="lib/libgazebo_clik">
+    <class name="gazebo_clik/Gazebo_Clik"
+    type="gazebo_clik::Gazebo_Clik"
+    base_class_type="controller_interface::ControllerBase"/>
+
+</library>
+
+<!--DA MODIFICARE-->
