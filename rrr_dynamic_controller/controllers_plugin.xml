@@ -1,0 +1,14 @@
+<library path="lib/librrr_dynamic_controller">
+    <class name="rrr_dynamic_controller/Computed_Torque_controller"
+        type="rrr_dynamic_controller::Computed_Torque_controller"
+        base_class_type="controller_interface::ControllerBase"/>
+
+    <class name="rrr_dynamic_controller/Operational_Space_CT"
+        type="rrr_dynamic_controller::Operational_Space_CT"
+        base_class_type="controller_interface::ControllerBase"/>
+
+    <class name="rrr_dynamic_controller/Back_Stepping"
+        type="rrr_dynamic_controller::Back_Stepping"
+        base_class_type="controller_interface::ControllerBase"/>
+
+</library>

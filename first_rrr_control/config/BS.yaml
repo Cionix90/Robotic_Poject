@@ -1,0 +1,16 @@
+rrr_robot:
+  hardware_interface:
+     joints:
+        - jnt_1
+        - jnt_2
+        - jnt_3
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+  test_controller:
+    type: rrr_dynamic_controller/Back_Stepping
+    joints: [jnt_1,jnt_2,jnt_3]
+    urdf: /home/jacopo/ROS_WS/src/first_rrr/urdf/model.urdf
+    first_link: base_link
+    ee_link: end_effector_link
+
